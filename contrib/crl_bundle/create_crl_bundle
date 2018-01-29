@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# nginx will only read CRLs from a single file, so create a script to be run by cron every day that 
+# creates a CRL bundle.
+# Ulf Tigerstedt <tigerstedt@iki.fi> 2018
+
+rm /etc/grid-security/crl-bundle.pem
+cat /etc/grid-security/certificates/*.r0 > /etc/grid-security/crl-bundle.pem
+rm /etc/grid-security/cert-bundle.pem
+cat /etc/grid-security/*.pem > /etc/grid-security/cert-bundle.pem
+
+# nginx needs a restart to 
+service nginx restart 1> /dev/null 2> /dev/null
+
