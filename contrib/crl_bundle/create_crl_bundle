@@ -7,7 +7,7 @@
 rm -f /etc/grid-security/igtf-bundle-crl.pem 1> /dev/null 2> /dev/null
 cat /etc/grid-security/certificates/*.r0 > /etc/grid-security/igtf-bundle-crl.pem
 rm -f /etc/grid-security/igtf-bundle.pem 1> /dev/null 2> /dev/null
-cat /etc/grid-security/*.pem > /etc/grid-security/igtf-bundle.pem
+cat /etc/grid-security/certificates/*.pem > /etc/grid-security/igtf-bundle.pem
 
 # nginx needs a restart to 
 service nginx restart 1> /dev/null 2> /dev/null

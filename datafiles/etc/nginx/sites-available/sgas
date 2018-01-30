@@ -21,7 +21,7 @@ server {
     #Uncomment this if you have installe the create_crl_bundle cronjob
     #ssl_crl /etc/grid-security/igtf-bundle-crl.pem;
 
-    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
 
     client_max_body_size 2m;
 
