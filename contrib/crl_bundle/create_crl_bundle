@@ -4,9 +4,9 @@
 # creates a CRL bundle.
 # Ulf Tigerstedt <tigerstedt@iki.fi> 2018
 
-rm /etc/grid-security/crl-bundle.pem
+rm -f /etc/grid-security/crl-bundle.pem 1> /dev/null 2> /dev/null
 cat /etc/grid-security/certificates/*.r0 > /etc/grid-security/crl-bundle.pem
-rm /etc/grid-security/cert-bundle.pem
+rm -f /etc/grid-security/cert-bundle.pem 1> /dev/null 2> /dev/null
 cat /etc/grid-security/*.pem > /etc/grid-security/cert-bundle.pem
 
 # nginx needs a restart to 
